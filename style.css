@@ -12,10 +12,10 @@
 }
 
 :root{
-    --bg-color: #000000;
-    --secound-bg-color: #1a1717;
-    --text-color:  #fafafa;
-    --main-color:   #34676C;
+    --bg-color: #ffffff;
+    --secound-bg-color: #d6bd98;
+    --text-color:  #1a3636;
+    --main-color:   #677d6a;
 }
 
 html{
@@ -46,7 +46,7 @@ body{
     left: 0;
     width: 100%;
     padding: 4rem 12% 4rem;
-    background: black;
+    background: rgba(214, 189, 152, 0.1);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -94,7 +94,7 @@ body{
 
 section{
     min-height: 100vh;
-    padding: 10rem 12% 10rem;
+    padding: 6rem 12% 6rem;
 }
 
 /* Home */
@@ -356,7 +356,7 @@ text-align: right;
 .timeline-dot{
     height: 21px;
     width: 21px;
-    background-color: var(--text-color);
+    background-color: var(--secound-bg-color);
     box-shadow: 0 0 25px var(--text-color),
                 0 0 50 px var(--text-color);
     position: absolute;
@@ -368,12 +368,13 @@ text-align: right;
 .timeline-date{
     font-size: 20px ;
     font-weight: 800;
-    color: black;
+    color: var(--secound-bg-color);
     margin: 6px 0 15px;
 }
 
 .timeline-content{
-    background-color: var(--bg-color);
+    background: rgba(214, 189, 152, 0.1);
+   /* background-color: var(--bg-color);*/
     border: 3px solid var(--main-color);
     padding: 30px 50px;
     border-radius: 4rem;
@@ -391,10 +392,18 @@ text-align: right;
     font-size: 20px;
     color: var(--text-color);
     margin: 0 0 10px;
-    font-weight: 500;
+    font-weight: bold;
 }
+.timeline-content h1{
+    font-size: 18px;
+    color: var(--main-color); /* lub inny kolor, np. #ff6b35, #007acc */
+    margin: 5px 0 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
 .timeline-content p{
-    color: white;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 300;
     line-height: 22px;
@@ -569,8 +578,9 @@ text-align: right;
   .technologies-item-title {
     text-align: center;
     margin-top: 1rem;
-    font-size: 1rem;
-    color: var(--text-color);
+    font-size: 1.5rem;
+    color: var(--secound-bg-color);
+    font-weight: bold;
   }
   
   .technologies-container .section-title {
@@ -582,7 +592,66 @@ text-align: right;
       margin: 2rem;
     }
   }
-  
+ 
+  /* Courses */
+.courses {
+    padding: 0 15px 100px 15px;
+    background: var(--bg-color);
+}
+
+.courses-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.courses-description {
+    font-size: 2.5rem;
+    padding: 1.3rem;
+    line-height: 3rem;
+    color: var(--main-color);
+    text-align: justify;
+    margin-bottom: 4rem;
+}
+
+.courses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.course-item {
+    background: white;
+    border: 3px solid var(--main-color);
+    border-radius: 2rem;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.course-item:nth-child(1) { animation-delay: 0.2s; }
+.course-item:nth-child(2) { animation-delay: 0.4s; }
+.course-item:nth-child(3) { animation-delay: 0.6s; }
+/* itd. dla kolejnych elementów */
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.course-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+}
+  /*footer*/
+
 .footer{
     position: relative;
     bottom: 0;
